@@ -14,7 +14,7 @@ void bubble_sort(int size, int output, bool file)
 	int user_choice();
 	int max_num = 0;
 	int screen_output = 0;
-	vector<arr_int> to_sort;
+	int to_sort;
 	if(user_choice)
 	{
 		create_array_user(to_sort, max_num, size);
@@ -33,9 +33,9 @@ void bubble_sort(int size, int output, bool file)
 	{
 		for(j = 0; j < to_sort.size() - 1; j ++)
 		{
-			if(to_sort[j]->num > to_sort[j+1]->num)
+			if(to_sort[j] > to_sort[j+1])
 			{
-				arr_int* temp = to_sort[j];
+				int temp = to_sort[j];
 				to_sort[j] = to_sort[j+1];
 				to_sort[j+1] = temp;
 				screen_output++;
@@ -53,4 +53,6 @@ void bubble_sort(int size, int output, bool file)
 	}
 	
 }
+
+
 
