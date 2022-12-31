@@ -10,7 +10,7 @@ using namespace std;
 //this is the partioning algorithm. This is works by checking values i and j against the starting number know as the pivot of the partion. if a i value is less then our pivot, we stwitch it with the next j value that is 
 //less then our pivot value. We do this until j has passed i, in which case we sqap the pivot with j, now everything before our pivot is less then it and everything after is greater. those values are not sorted,
 //but we are one step closer. the time complexity is O(n*logn)
-int quick_sort_partition(int start, int end, vector<arr_int>& to_sort, int max, int output)
+int quick_sort_partition(int start, int end, vector<int>& to_sort, int max, int output)
 {
 	
 	int i = start;
@@ -23,14 +23,14 @@ int quick_sort_partition(int start, int end, vector<arr_int>& to_sort, int max, 
 			i++;
 		
 		
-		}while(to_sort[i]->num <= to_sort[start])//if at any point i is greater then pivot, we need to swap that i value with a j. 
+		}while(to_sort[i] <= to_sort[start])//if at any point i is greater then pivot, we need to swap that i value with a j. 
 		
 		do
 		{
 			j--;
 			
-		}while(to_sort[j]->num > to_sort[start])//if we encounter a value where j is less then the pivot, we need to swap that j value with an i.
-		arr_int* temp= to_sort[i];
+		}while(to_sort[j] > to_sort[start])//if we encounter a value where j is less then the pivot, we need to swap that j value with an i.
+		int temp= to_sort[i];
 		to_sort[i] = to_sort[j];
 		to_sort[j] = temp;
 		o++;
@@ -45,7 +45,7 @@ int quick_sort_partition(int start, int end, vector<arr_int>& to_sort, int max, 
 	}
 	
 	//this swaps the pivot with the current j value.
-	arr_int* temp= to_sort[start];
+	int temp= to_sort[start];
 	to_sort[start] = to_sort[j];
 	to_sort[j] = temp;
 	
@@ -57,7 +57,7 @@ int quick_sort_partition(int start, int end, vector<arr_int>& to_sort, int max, 
 }
 
 //this is an recursive function, which partitions our vector into smaller and smaller halves until the array is sorted.
-void quick_sort(int start, int end, vector<arr_int>& to_sort, int max, int output)
+void quick_sort(int start, int end, vector<int>& to_sort, int max, int output)
 {
 	if(start < end)
 	{
@@ -75,7 +75,7 @@ void quick_sort_setup(int size, int output, bool file)
 	int user_choice();
 	int max_num = 0;
 	int screen_output = 0;
-	vector<arr_int> to_sort;
+	int to_sort;
 	if(user_choice)
 	{
 		create_array_user(to_sort, max_num);
@@ -90,4 +90,5 @@ void quick_sort_setup(int size, int output, bool file)
 	quick_sort(0, to_sort.size(), to_sort, max_num, output)
 	
 }
+
 
