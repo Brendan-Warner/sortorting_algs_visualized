@@ -16,7 +16,7 @@ void insertion_sort(int size, int output, bool file)
 	int user_choice();
 	int max_num = 0;
 	int screen_output = 0;
-	vector<arr_int> to_sort;
+	vector<int> to_sort;
 	if(user_choice)
 	{
 		create_array_user(to_sort, max_num);
@@ -33,9 +33,9 @@ void insertion_sort(int size, int output, bool file)
 	{
 		for(j = i-1; j >=0; j--)
 		{
-			if(to_sort[i]->num < to_sort[j]->num)
+			if(to_sort[i] < to_sort[j])
 			{
-				int_arr* temp = to_sort[i];
+				int temp = to_sort[i];
 				to_sort[i] = to_sort[j];
 				to_sort[j] = temp;
 				
@@ -56,4 +56,7 @@ void insertion_sort(int size, int output, bool file)
 	}
 	
 }
+
+
+
 
