@@ -10,12 +10,12 @@ using namespace std;
 
 
 //this is where mergsort combines to partionted parts of the orginal vector.
-vector<arr_int*> merge(vector<int_arr*> to_sort_left, vector<int_arr*> to_sort_right)
+vector<int> merge(vector<int> to_sort_left, vector<int> to_sort_right)
 {
 	vector<int_arr*> combined_vects;
 	while(!to_sort_left.empty() && !to_sort_right.empty())//checks if one of the partions is empty.
 	{
-		if(to_sort_left[0] ->num < to_sort_right[0]->num)//if the left partion number is smaller, then add it to the vector, else we add the right number to the vector.
+		if(to_sort_left[0] < to_sort_right[0])//if the left partion number is smaller, then add it to the vector, else we add the right number to the vector.
 		{
 			combined_vects.push_back(to_sort_left[0];
 			to_sort_left.pop(to_sort_left.begin());
@@ -45,7 +45,7 @@ vector<arr_int*> merge(vector<int_arr*> to_sort_left, vector<int_arr*> to_sort_r
 }
 
 //This is the other main portion of merge sort, it partions the vector recursivly until we are left with vectors of size one. after that, we use the merge function above to combine the vectors back into one large one. 
-vector<arr_int*> merg_sort(vector<int_arr*> to_sort)
+vector<int> merg_sort(vector<int> to_sort)
 {
 	if(to_sort.size() == 1)
 	{
@@ -53,8 +53,8 @@ vector<arr_int*> merg_sort(vector<int_arr*> to_sort)
 		
 	}
 	
-	vector<int_arr*> to_sort_left;
-	vector<int_arr*> to_sort_right;
+	vector<int> to_sort_left;
+	vector<int> to_sort_right;
 	int i = 0;
 	for(i =0; i < to_sort.size()/2; i ++)
 	{
@@ -84,7 +84,7 @@ void merge_sort_prep(int size, int output, bool file)
 	int user_choice();
 	int max_num = 0;
 	int screen_output = 0;
-	vector<arr_int> to_sort;
+	vector<int> to_sort;
 	if(user_choice)
 	{
 		create_array_user(to_sort, max_num);
@@ -101,4 +101,6 @@ void merge_sort_prep(int size, int output, bool file)
 	to_sort = merge_sort(to_sort);
 	
 }
+
+
 
