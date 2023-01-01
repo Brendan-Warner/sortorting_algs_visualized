@@ -11,55 +11,60 @@ using namespace std;
 //the current, we do nothing, else, we swap with the found smallest number. we do this till we hit the end of the vector. The time complexity is O(n^2)
 void selection_sort(int size, int output, bool file)
 {
-	
-	int user_choice();
+
+	bool user = user_choice();
 	int max_num = 0;
 	int screen_output = 0;
 	vector<int> to_sort;
-	if(user_choice)
+	if (user)
 	{
-		create_array_user(to_sort, max_num);
+		create_array_user(to_sort, max_num, size);
 	}
-	
+
 	else
 	{
 		cout << "please enter a max number" << endl;
 		cin >> max_num;
-		create_array(to_sort, max_num)
+		create_array(to_sort, max_num, size);
 	}
-	int i = 0; j = 0, t= 0;
-	for(i = 0; i < to_sort.size() - 1; i ++)
+
+	print_array(to_sort, max_num);
+
+	int i = 0, j = 0, t = 0;
+	for (i = 0; i < to_sort.size() - 1; i++)
 	{
 		t = i;
-		for(j = i-1; j <to_sort.size(); j++)
+		for (j = i + 1; j < to_sort.size(); j++)
 		{
-			if(to_sort[j] <  to_sort[t])// if this is true, then we have a found a smaller number to swap with the one at i.
+			if (to_sort[j] < to_sort[t])// if this is true, then we have a found a smaller number to swap with the one at i.
 			{
 				t = j;
-				
+
 			}
-			
-			
+
+
 		}
-		
-		if(i != t)//if this is true, we have found a number smaller then the one at i, so we swap it with the one at t.
+
+		if (i != t)//if this is true, we have found a number smaller then the one at i, so we swap it with the one at t.
 		{
-			int temp = to_sort[i]
+			int temp = to_sort[i];
 			to_sort[i] = to_sort[t];
-			to_sort[t] = to_sort[i];
+			to_sort[t] = temp;
 			screen_output++;
-			if(screen_output == output)
+			if (screen_output == output)
 			{
 				print_array(to_sort, max_num);
 				screen_output = 0;
 			}
-			
+
 		}
-		
-		
+
+
 	}
-	
+
 }
+
+
 
 
 
