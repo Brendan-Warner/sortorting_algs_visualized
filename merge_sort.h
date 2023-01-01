@@ -1,7 +1,8 @@
 #pragma once
+#include <vector>
 
-vector<arr_int*> merge(vector<int> to_sort_left, vector<int> to_sort_right);
+std::vector<int> merge(std::vector<int> to_sort_left, std::vector<int> to_sort_right, int max);
 
-vector<arr_int*> merg_sort(vector<int> to_sort);
+std::vector<int> merg_sort(std::vector<int> to_sort, int max);
 
-void selection_sort(int size, int output, bool file);
+void merge_sort_prep(int size, int output, bool file);
