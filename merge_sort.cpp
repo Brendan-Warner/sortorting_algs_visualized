@@ -18,13 +18,13 @@ vector<int> merge(vector<int> to_sort_left, vector<int> to_sort_right, int max)
 		if (to_sort_left[0] < to_sort_right[0])//if the left partion number is smaller, then add it to the vector, else we add the right number to the vector.
 		{
 			combined_vects.push_back(to_sort_left[0]);
-			print_array(combined_vects, max);
+			print_array_merge(combined_vects,to_sort_left, to_sort_right, max);
 			to_sort_left.erase(to_sort_left.begin());
 		}
 
 		else {
 			combined_vects.push_back(to_sort_right[0]);
-			print_array(combined_vects, max);
+			print_array_merge(combined_vects, to_sort_left, to_sort_right, max);
 			to_sort_right.erase(to_sort_right.begin());
 		}
 
@@ -33,14 +33,14 @@ vector<int> merge(vector<int> to_sort_left, vector<int> to_sort_right, int max)
 	while (!to_sort_left.empty())//if the left array is not empty but the right is, then we add the remaning left numbers to the array. These values should already be sorted by a previous merge.
 	{
 		combined_vects.push_back(to_sort_left[0]);
-		print_array(combined_vects, max);
+		print_array_merge(combined_vects, to_sort_left, to_sort_right, max);
 		to_sort_left.erase(to_sort_left.begin());
 	}
 
 	while (!to_sort_right.empty())//if the right array is not empty but the left is, then we add the remaning right numbers to the array. These values should already be sorted by a previous merge.
 	{
 		combined_vects.push_back(to_sort_right[0]);
-		print_array(combined_vects, max);
+		print_array_merge(combined_vects, to_sort_left, to_sort_right, max);
 		to_sort_right.erase(to_sort_right.begin());
 	}
 
@@ -107,6 +107,8 @@ void merge_sort_prep(int size, int output, bool file)
 	to_sort = merg_sort(to_sort, max_num);
 
 }
+
+
 
 
 
