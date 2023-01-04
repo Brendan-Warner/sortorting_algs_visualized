@@ -48,7 +48,7 @@ void insertion_sort(int size, int output, bool file)
 				screen_output++;
 				if (output == screen_output)
 				{
-					print_array(to_sort, max_num);
+					print_array(to_sort, max_num, t, j);
 					screen_output = 0;
 				}
 
@@ -62,6 +62,7 @@ void insertion_sort(int size, int output, bool file)
 	}
 
 }
+
 
 
 
