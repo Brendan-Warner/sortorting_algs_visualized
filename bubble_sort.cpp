@@ -46,7 +46,7 @@ void bubble_sort(int size, int output, bool file)
 				if (screen_output == output)
 				{
 					screen_output = 0;
-					print_array(to_sort, max_num);
+					print_array(to_sort, max_num, j, j+1);
 				}
 
 			}
@@ -55,6 +55,7 @@ void bubble_sort(int size, int output, bool file)
 	}
 
 }
+
 
 
 
