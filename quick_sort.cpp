@@ -41,7 +41,7 @@ int quick_sort_partition(int start, int end, vector<int>& to_sort, int max, int 
 
 		if (output == o)
 		{
-			print_array(to_sort, max);
+			print_array(to_sort, max, i, j);
 			o = 0;
 
 		}
@@ -53,6 +53,8 @@ int quick_sort_partition(int start, int end, vector<int>& to_sort, int max, int 
 	int temp = to_sort[start];
 	to_sort[start] = to_sort[j];
 	to_sort[j] = temp;
+
+	print_array(to_sort, max, i, j);
 
 	return j;//return our j value as it will be the basis for seperating our vector into to small vectors.
 
@@ -99,6 +101,7 @@ void quick_sort_setup(int size, int output, bool file)
 	quick_sort(0, to_sort.size(), to_sort, max_num, output);
 
 }
+
 
 
 
