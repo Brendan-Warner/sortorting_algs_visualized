@@ -53,7 +53,7 @@ void selection_sort(int size, int output, bool file)
 			screen_output++;
 			if (screen_output == output)
 			{
-				print_array(to_sort, max_num);
+				print_array(to_sort, max_num, i, t);
 				screen_output = 0;
 			}
 
@@ -63,6 +63,8 @@ void selection_sort(int size, int output, bool file)
 	}
 
 }
+
+
 
 
 
