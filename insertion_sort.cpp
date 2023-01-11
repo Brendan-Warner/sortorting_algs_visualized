@@ -29,7 +29,7 @@ void insertion_sort(int size, int output, bool file)
 		create_array(to_sort, max_num, size);
 	}
 
-	print_array(to_sort, max_num);
+	print_array(to_sort, max_num, file);
 
 	int i = 0, j = 0;
 	for (i = 0; i < to_sort.size(); i++)
@@ -43,14 +43,15 @@ void insertion_sort(int size, int output, bool file)
 				int temp = to_sort[t];
 				to_sort[t] = to_sort[j];
 				to_sort[j] = temp;
-				t--;
-
 				screen_output++;
 				if (output == screen_output)
 				{
-					print_array(to_sort, max_num, t, j);
+					print_array(to_sort, max_num, t, j, file);
 					screen_output = 0;
 				}
+				t--;
+
+				
 
 			}
 
@@ -62,6 +63,7 @@ void insertion_sort(int size, int output, bool file)
 	}
 
 }
+
 
 
 
