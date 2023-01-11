@@ -28,7 +28,7 @@ void selection_sort(int size, int output, bool file)
 		create_array(to_sort, max_num, size);
 	}
 
-	print_array(to_sort, max_num);
+	print_array(to_sort, max_num, file);
 
 	int i = 0, j = 0, t = 0;
 	for (i = 0; i < to_sort.size() - 1; i++)
@@ -53,7 +53,7 @@ void selection_sort(int size, int output, bool file)
 			screen_output++;
 			if (screen_output == output)
 			{
-				print_array(to_sort, max_num, i, t);
+				print_array(to_sort, max_num, i, t, file);
 				screen_output = 0;
 			}
 
@@ -63,6 +63,8 @@ void selection_sort(int size, int output, bool file)
 	}
 
 }
+
+
 
 
 
