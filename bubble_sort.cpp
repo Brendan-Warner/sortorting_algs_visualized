@@ -27,7 +27,7 @@ void bubble_sort(int size, int output, bool file)
 		create_array(to_sort, max_num, size);
 	}
 
-	print_array(to_sort, max_num);
+	print_array(to_sort, max_num, file);
 
 	//this is the main for loop, with bubble sort, the idea is that larger numbers in the array "bubble" to the top of the array. the complexity of bubble sort is On^2
 	int i = 0, j = 0;
@@ -46,7 +46,7 @@ void bubble_sort(int size, int output, bool file)
 				if (screen_output == output)
 				{
 					screen_output = 0;
-					print_array(to_sort, max_num, j, j+1);
+					print_array(to_sort, max_num, j, j+1, file);
 				}
 
 			}
@@ -55,6 +55,7 @@ void bubble_sort(int size, int output, bool file)
 	}
 
 }
+
 
 
 
